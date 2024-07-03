@@ -14,8 +14,8 @@ public class CodeController {
     CodeService codeService;
 
     @PostMapping("/generate-code/")
-    public void code(@RequestBody String email) {
-
-        codeService.generateCode(email);
+    public void code(@RequestBody Map<String, String> authentification) {
+        String emaile = authentification.get("email");
+        codeService.generateCode(emaile);
     }
 }
