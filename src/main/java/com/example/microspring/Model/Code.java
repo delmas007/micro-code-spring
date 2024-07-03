@@ -9,6 +9,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
+
 @Entity
 @Builder
 @AllArgsConstructor
@@ -18,6 +20,9 @@ public class Code {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    private Instant creation;
+    private Instant expiration;
     private String code;
     private String email;
 
