@@ -11,12 +11,12 @@ public class VerificationCode {
 
     CodeRepository codeRepository;
 
-    public void verifyCode(String email, String code) {
+    public int verifyCode(String email, String code) {
         Code codee = codeRepository.findByEmail(email);
         if (codee.getCode().equals(code)) {
-            System.out.println("Code is correct");
+            return 1;
         } else {
-            System.out.println("Code is incorrect");
+            return 0;
         }
     }
 }

@@ -15,6 +15,10 @@ public class CodeService {
     CodeRepository codeRepository;
     NotificationMailServiceImp notificationMailServiceImp;
     public void generateCode(String email) {
+        Code codeee = codeRepository.findByEmail(email);
+        if (codeee!= null){
+            codeRepository.delete(codeee);
+        }
         Code codee = new Code();
         Instant creation = Instant.now();
         Instant expiration = creation.plus((Duration.ofMinutes(5)));
