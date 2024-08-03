@@ -22,7 +22,7 @@ public class NotificationMailServiceImp {
             MimeMessage mail = javaMailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(mail, true);
 
-            helper.setFrom("angamancedrick@gmail.com");
+            helper.setFrom("noreply@delmas-gpt.tech");
             helper.setTo(validation.getEmail());
             helper.setSubject("Votre code d'activation");
 
